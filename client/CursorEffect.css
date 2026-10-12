@@ -1,0 +1,55 @@
+
+/* Custom cursor */
+.demo-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #73020c;
+    border-radius: 50%;
+    background: rgba(115, 2, 12, 0.18);
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    transition: width 0.15s ease, height 0.15s ease;
+}
+
+/* Highlight clickable elements */
+body.demo-cursor-active a:hover,
+body.demo-cursor-active button:hover {
+    cursor: none !important;
+}
+
+.demo-cursor.is-hovering {
+    width: 30px;
+    height: 30px;
+    background: rgba(115, 2, 12, 0.25);
+}
+
+/* Click ripple */
+.demo-ripple {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #73020c;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99998;
+    transform: translate(-50%, -50%);
+    animation: cursor-ripple 0.55s ease-out forwards;
+}
+
+@keyframes cursor-ripple {
+    from {
+        opacity: 0.8;
+        width: 20px;
+        height: 20px;
+    }
+
+    to {
+        opacity: 0;
+        width: 60px;
+        height: 60px;
+    }
+}
